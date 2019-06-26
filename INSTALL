@@ -1,0 +1,21 @@
+#!/bin/sh
+#echo 'install ruby'
+#sudo pacman -S ruby
+
+#echo 'install gir_ffi'
+#sudo gem install gir_ffi
+
+echo 'create directory /usr/share/hanser'
+sudo mkdir /usr/share/hanser
+echo 'create /usr/lib/systemed/system/hanser.service'
+sudo cp hanser.service /usr/lib/systemd/system
+echo 'create /usr/share/hanser/wait-for-hanser.sh'
+sudo cp wait-for-hanser.sh /usr/share/hanser/wait-for-hanser.sh
+echo 'create /usr/share/hanser/main.rb'
+sudo cp main.rb /usr/share/hanser/main.rb
+
+sudo chmod +x /usr/share/hanser/main.rb
+sudo chmod +x /usr/share/hanser/wait-for-hanser.sh
+
+sudo systemctl daemon-reload
+echo 'Done.'

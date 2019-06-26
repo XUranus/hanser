@@ -1,0 +1,10 @@
+#!/bin/sh
+echo 'uninstalling...'
+sudo rm -rf /usr/share/hanser
+echo 'stoping...'
+sudo systemctl stop hanser
+echo 'disabling....'
+sudo systemctl disable hanser
+echo 'removing service...'
+sudo rm -rf /usr/lib/systemd/system/hanser.service
+echo 'Done.'
